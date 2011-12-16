@@ -15,6 +15,6 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ ElementType.TYPE, ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UserRepository {
+public @interface StoreRepository {
     /* class body intentionally left blank */
 }

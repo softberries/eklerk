@@ -12,7 +12,7 @@ import javax.transaction.UserTransaction;
 import org.jboss.logging.Logger;
 import org.jboss.seam.solder.logging.Category;
 
-import com.softberries.eklerk.data.UserRepository;
+import com.softberries.eklerk.data.StoreRepository;
 import com.softberries.eklerk.model.User;
 
 // Adding the @Stateful annotation eliminates need for manual transaction demarcation
@@ -26,7 +26,7 @@ public class UserRegistration {
     private Logger log;
 
     @Inject
-    @UserRepository
+    @StoreRepository
     private EntityManager em;
 
     @Inject

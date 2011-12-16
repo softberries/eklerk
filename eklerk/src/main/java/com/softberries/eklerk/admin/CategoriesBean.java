@@ -1,8 +1,11 @@
 package com.softberries.eklerk.admin;
 
-import org.primefaces.model.TreeNode;
-import org.primefaces.model.DefaultTreeNode;
+import javax.inject.Named;
 
+import org.primefaces.model.DefaultTreeNode;
+import org.primefaces.model.TreeNode;
+
+@Named
 public class CategoriesBean {
 	
 	private TreeNode root;

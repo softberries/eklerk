@@ -21,6 +21,13 @@ public class ProductAttributeValue {
 	@JoinColumn(name="productAttribute")
 	private ProductAttribute productAttribute;
 
+	public ProductAttributeValue(){
+		
+	}
+	public ProductAttributeValue(ProductAttribute attr, String value){
+		this.productAttribute = attr;
+		this.value = value;
+	}
 	public Long getId() {
 		return id;
 	}

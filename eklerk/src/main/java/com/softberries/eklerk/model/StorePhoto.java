@@ -5,9 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Table(name="store_photo")
 public class StorePhoto {
 	
 	@GeneratedValue

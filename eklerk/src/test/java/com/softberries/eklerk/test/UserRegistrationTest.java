@@ -17,7 +17,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import com.softberries.eklerk.controller.UserRegistration;
-import com.softberries.eklerk.data.UserRepository;
+import com.softberries.eklerk.data.StoreRepository;
 import com.softberries.eklerk.data.UserRepositoryProducer;
 import com.softberries.eklerk.model.User;
 
@@ -26,7 +26,7 @@ public class UserRegistrationTest {
     @Deployment
     public static Archive<?> createTestArchive() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addClasses(User.class, UserRegistration.class, UserRepository.class, UserRepositoryProducer.class)
+                .addClasses(User.class, UserRegistration.class, StoreRepository.class, UserRepositoryProducer.class)
                 // addAsManifestResource is incorrectly targeting /META-INF
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");

@@ -1,12 +1,11 @@
 package com.softberries.eklerk.data;
 
-import com.softberries.eklerk.model.User;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
-
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,10 +14,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import com.softberries.eklerk.model.User;
+
 @RequestScoped
 public class UserListProducer {
     @Inject
-    @UserRepository
+    @StoreRepository
     private EntityManager em;
 
     private List<User> users;

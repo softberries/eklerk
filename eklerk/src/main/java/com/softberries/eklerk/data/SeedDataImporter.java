@@ -8,12 +8,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.TransactionRequiredException;
 import javax.transaction.UserTransaction;
 
-import com.softberries.eklerk.model.ProductAttribute;
-import com.softberries.eklerk.model.ProductCategory;
 import org.jboss.logging.Logger;
-
-import com.softberries.eklerk.model.User;
 import org.jboss.seam.solder.logging.Category;
+
+import com.softberries.eklerk.model.ProductAttribute;
+import com.softberries.eklerk.model.ProductAttributeType;
+import com.softberries.eklerk.model.ProductAttributeValue;
+import com.softberries.eklerk.model.ProductCategory;
+import com.softberries.eklerk.model.User;
 
 /**
  * Import seed data into the database on application startup.
@@ -36,7 +38,7 @@ public class SeedDataImporter {
     private Logger log;
 
     @Inject
-    @UserRepository
+    @StoreRepository
     private EntityManager em;
 
     @Inject
@@ -46,6 +48,7 @@ public class SeedDataImporter {
     public void importData() {
         importUsers();
         importCategories();
+        importAttributes();
     }
 
     private void importCategories() {
@@ -60,7 +63,12 @@ public class SeedDataImporter {
     }
 
     private void importAttributes(){
-    	ProductAttribute pa = new ProductAttribute();
+    	ProductAttribute pa = new ProductAttribute("atrybut głowny",ProductAttributeType.SIMPLE, true);
+    	ProductAttributeValue pv1 = new ProductAttributeValue(pa, "value 001");
+    	ProductAttributeValue pv2 = new ProductAttributeValue(pa, "value 002");
+    	em.persist(pa);
+    	em.persist(pv1);
+    	em.persist(pv2);
     }
     private void importUsers() {
         User member1 = new User();

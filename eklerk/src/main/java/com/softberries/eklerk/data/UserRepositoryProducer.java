@@ -21,7 +21,7 @@ public class UserRepositoryProducer {
     // use @SuppressWarnings to tell IDE to ignore warnings about field not being referenced directly
     @SuppressWarnings("unused")
     @Produces
-    @UserRepository
+    @StoreRepository
     @PersistenceContext
     private EntityManager em;
 }

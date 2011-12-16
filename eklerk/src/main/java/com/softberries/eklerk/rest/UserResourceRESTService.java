@@ -9,7 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import com.softberries.eklerk.data.UserRepository;
+import com.softberries.eklerk.data.StoreRepository;
 import com.softberries.eklerk.model.User;
 
 /**
@@ -21,7 +21,7 @@ import com.softberries.eklerk.model.User;
 @RequestScoped
 public class UserResourceRESTService {
     @Inject
-    @UserRepository
+    @StoreRepository
     private EntityManager em;
 
     @GET
